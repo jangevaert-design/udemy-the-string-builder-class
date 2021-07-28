@@ -28,9 +28,33 @@ public class TheStringBuilderClass {
     System.out.println(builder);//prints start-middle-end
     System.out.println(anotherBuilder);//prints start-middle-end
     System.out.println(builder == anotherBuilder);//prints true
-    System.out.println(builder.equals(anotherBuilder));//prints true
+    System.out.println(builder.equals(anotherBuilder));//prints true and proves that StringBuilder
+    //works further on only one String.
     System.out.println(System.identityHashCode(builder));// prints 14236464
     System.out.println(System.identityHashCode(anotherBuilder));// prints 14236464
+
+    //capacity is by default 16 but Java will automatically increase capacity if needed.
+
+    StringBuilder myBuilder = new StringBuilder();
+    System.out.println();
+    System.out.println("size = " + myBuilder.length());//size = 0
+    System.out.println("capacity = " + myBuilder.capacity());//capacity = 16
+
+    myBuilder = new StringBuilder(100);
+    System.out.println("size = " + myBuilder.length());//size = 0
+    System.out.println("capacity = " + myBuilder.capacity());//capacity = 100
+
+    myBuilder.append("My New Test");
+    System.out.println("size = " + myBuilder.length());//size = 11
+    System.out.println("capacity = " + myBuilder.capacity());//capacity = 100
+
+    StringBuilder a = new StringBuilder("This ");
+    StringBuilder b = a.append("Java ");
+    b = b.append("is").append(" so ").append("cool.");
+    System.out.println();
+    System.out.println(a);
+    System.out.println(b);// they will print both the same because we only have one StringBuilder
+    //object here.
 
   }
 }
